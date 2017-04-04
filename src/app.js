@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Scene, Router } from 'react-native-router-flux';
 import {
   AppRegistry,
   StyleSheet,
@@ -13,14 +14,18 @@ import {
   View,
   Image,
 } from 'react-native';
-import ListArtists from './Artist/ListArtists';
+import HomeView from './views/HomeView';
+import TestView from './views/TestView';
 
 export default class AwesomeProject extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <ListArtists />
-      </View>
+      <Router>
+        <Scene key="root">
+          <Scene key="home" component={ HomeView } />
+          <Scene key="testview" component={ TestView } hideNavBar={ false }/>
+        </Scene>
+      </Router>
     );
   }
 }

@@ -3,14 +3,18 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {
   StyleSheet,
   View,
+  Text
 } from 'react-native';
-import ListArtists from '../artists/ListArtists';
 
-export default class HomeView extends Component {
+export default class TestView extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListArtists />
+        <Text> Esta es una vista de prueba </Text>
+        <Text> Esta es una vista de prueba </Text>
+        <Text> Esta es una vista de prueba </Text>
+        <Text> Esta es una vista de prueba </Text>
+        <Text> Esta es una vista de prueba </Text>
       </View>
     );
   }
