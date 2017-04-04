@@ -13,17 +13,19 @@ import {
   Text,
   View,
   Image,
+  Platform,
 } from 'react-native';
 import HomeView from './views/HomeView';
 import TestView from './views/TestView';
 
 export default class AwesomeProject extends Component {
   render() {
+    const isAndroid = Platform.OS === 'android'
     return (
       <Router>
         <Scene key="root">
           <Scene key="home" component={ HomeView } />
-          <Scene key="testview" component={ TestView } hideNavBar={ false }/>
+          <Scene key="testview" component={ TestView } hideNavBar={ isAndroid }/>
         </Scene>
       </Router>
     );
