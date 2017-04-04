@@ -9,13 +9,32 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  Alert
 } from 'react-native';
 
 export default class AwesomeProject extends Component {
+  onButtonPress() {
+    Alert.alert(
+      'Alert Title',
+      'My Alert Msg',
+      [
+        {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+        {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      { cancelable: false }
+    )
+  }
   render() {
     return (
       <View style={styles.container}>
+        <Button
+            onPress={this.onButtonPress}
+            title="Press Me"
+            accessibilityLabel="See an informative alert"
+        />
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
