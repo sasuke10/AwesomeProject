@@ -20,6 +20,7 @@ import TestView from './views/TestView';
 import LoginView from './views/LoginView';
 
 export default class AwesomeProject extends Component {
+
   render() {
     const isAndroid = Platform.OS === 'android'
     return (
