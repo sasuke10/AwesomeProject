@@ -45,9 +45,9 @@ export default class Artist extends Component {
                 <View style={ styles.box }>
                     <Image style={ styles.image } source={{ uri: image }} />
                     <View style={ styles.info }>
-                    <Text style={ styles.name }>{ name }</Text>
-                    <Icon name="rocket" size={30} color="#900" />
-                    <Text>{ likes }</Text>
+                        <Text style={ styles.name }>{ name }</Text>
+                        <Icon name="rocket" size={30} color="#900" />
+                        <Text>{ likes }</Text>
                     </View>
                 </View>
             </TouchableOpacity>

@@ -4,22 +4,26 @@ import {
   AppRegistry,
   Platform,
 } from 'react-native';
+import { Provider } from 'react-redux';
 import HomeView from './views/HomeView';
 import TestView from './views/TestView';
-import LoginView from './views/LoginView';
+import LoginView from './views/LoginViewContainer';
+import store from './state/store';
 
 export default class AwesomeProject extends Component {
     render() {
         const isAndroid = Platform.OS === 'android';
 
         return (
-          <Router>
-            <Scene key="login" component={ LoginView } />
-            <Scene key="root">
-              <Scene key="home" component={ HomeView } />
-              <Scene key="testview" component={ TestView } hideNavBar={ isAndroid }/>
-            </Scene>
-          </Router>
+            <Provider store={ store }>
+                <Router>
+                    <Scene key="login" component={ LoginView } hideNavBar={true} />
+                    <Scene key="root">
+                      <Scene key="home" component={ HomeView } />
+                      <Scene key="testview" component={ TestView } hideNavBar={ isAndroid }/>
+                    </Scene>
+                </Router>
+            </Provider>
         );
     }
 }
