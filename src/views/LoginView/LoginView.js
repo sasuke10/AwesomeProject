@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { LoginButton, AccessToken } from 'react-native-fbsdk';
-import { firebaseAuth, facebookAddProvider } from '../helpers/firebase';
+import { firebaseAuth, facebookAddProvider } from '../../helpers/firebase';
 import { Actions } from 'react-native-router-flux';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -126,21 +126,18 @@ export default class LoginView extends Component {
     }
 
     handlePress() {
-        console.warn('hola', 'hola');
-        Actions.testview();
+        Actions.root();
     }
 
 
     render() {
-        console.warn('hola', 'hola');
-
         return (
             <LinearGradient
                 colors={['#f74b25', '#f32778']}
                 style={styles.linearGradient}
                 start={{ x: 1.0, y: 0.0 }} end={{ x: 0.0, y: 1.0 }} >
-                <Image style={ styles.logo } source={require('../img/logopng.png')} />
-                <Image style={ styles.iconGeo } source={require('../img/ico_geolocalizacion.png')} />
+                <Image style={ styles.logo } source={require('../../img/logopng.png')} />
+                <Image style={ styles.iconGeo } source={require('../../img/ico_geolocalizacion.png')} />
                 <Text style={ styles.textAllowGeo }>Kidzzer solicita que premitas la geolocaliación</Text>
                 <TouchableOpacity onPress={ this.handlePress }>
                     <View style={ styles.buttonGeo }>

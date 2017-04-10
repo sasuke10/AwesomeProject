@@ -7,7 +7,8 @@ import {
 import { Provider } from 'react-redux';
 import HomeView from './views/HomeView';
 import TestView from './views/TestView';
-import LoginView from './views/LoginViewContainer';
+import LoginView from './views/LoginView/LoginViewContainer';
+import SignIn from './views/LoginView/SignIn';
 import store from './state/store';
 
 export default class AwesomeProject extends Component {
@@ -17,10 +18,13 @@ export default class AwesomeProject extends Component {
         return (
             <Provider store={ store }>
                 <Router>
-                    <Scene key="login" component={ LoginView } hideNavBar={true} />
+                    <Scene key="login" component={ LoginView } hideNavBar={true}>
+
+                    </Scene>
                     <Scene key="root">
-                      <Scene key="home" component={ HomeView } />
-                      <Scene key="testview" component={ TestView } hideNavBar={ isAndroid }/>
+                        <Scene key="signIn" component={ SignIn } hideNavBar={true}/>
+                        <Scene key="home" component={ HomeView } />
+                        <Scene key="testview" component={ TestView } hideNavBar={ isAndroid }/>
                     </Scene>
                 </Router>
             </Provider>
